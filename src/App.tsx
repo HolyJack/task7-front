@@ -40,7 +40,7 @@ function App() {
         </h1>
       </header>
       <main className="h-fit w-full overflow-scroll">
-        <div className="flexflex-col container mx-auto gap-10 transition-transform ">
+        <div className="container mx-auto flex flex-col gap-10 transition-transform ">
           {!username && (
             <div className="mx-auto flex h-full flex-col pt-10">
               <EnterName setUsername={setUsername} />
@@ -52,7 +52,7 @@ function App() {
           {username && game && isConnected && <StartGame game={game} />}
           {username && game && (
             <button
-              className="mx-auto h-20 w-full rounded  border bg-gray-800 text-xl font-semibold"
+              className="mx-auto h-20 w-full max-w-xl rounded  border bg-gray-800 text-xl font-semibold"
               onClick={() => {
                 setGame(undefined);
                 socket.emit("exit game");
